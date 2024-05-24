@@ -16,17 +16,22 @@ function enterClicked() {
   let quotient = 0
 
   // process
-
-  while (true) {
-    if (remainder < b) {
-      break
-    } else {
-      quotient += 1
-      remainder -= b
+  if (b != 0) {
+    while (true) {
+      if (remainder < b) {
+        break
+      } else {
+        quotient += 1
+        remainder -= b
+      }
     }
   }
 
   // output
+  if (b == 0) {
+    document.getElementById("user-info").innerHTML = "undefined"
+  } else {
+    document.getElementById("user-info").innerHTML = quotient + " remainder " + remainder
+  }
 
-  document.getElementById("user-info").innerHTML = quotient + " remainder " + remainder
 }
